@@ -3,4 +3,5 @@ Pillow==9.5.0
 tensorflow==2.13.0rc1
 google-auth==2.20.0
 requests==2.28.1
-urllib3==1.26.12
+urllib3==1.26.16
+keras==2.12.0
