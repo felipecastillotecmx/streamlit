@@ -10,9 +10,8 @@ df_coment=pd.read_csv("https://raw.githubusercontent.com/EstebanPerez25/ACD-Mode
 osf_valores = df_coment['osf'].unique().tolist()
 
 # -- Leer modelo
-nombre_archivo = "m_dnn.pkl"
-archivo_entrada = open(nombre_archivo, 'rb')
-lin_model = pickle.load(archivo_entrada)
+with open('m_dnn.pkl', 'rb') as f:
+    lin_model = pickle.load(f)
 
 # -- Función modelo
 def prediction(lstat, rm):
