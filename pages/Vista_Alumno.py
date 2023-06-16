@@ -17,7 +17,8 @@ with tf.name_scope("parent"):
     with tf.name_scope(model.name):
         model.build((None, 3))
 print([v.name for v in model.variables])
-lin_model = pickle.load(open('m_dnn.pkl', 'rb'), encoding='latin1')
+#lin_model = pickle.load(open('m_dnn.pkl', 'rb'), encoding='latin1')
+lin_model = pd.read_pickle(r'm_dnn.pkl')
 
 # -- Función modelo
 def prediction(lstat, rm):
