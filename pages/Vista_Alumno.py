@@ -76,4 +76,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    lin_model = pd.read_pickle(r'm_dnn.pkl')
