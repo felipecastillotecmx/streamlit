@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import tensorflow
 import pickle
+from tensorflow import keras
 
 # -- Data
 df_coment=pd.read_csv("https://raw.githubusercontent.com/EstebanPerez25/ACD-Modelo_predictivo_de_satisfacion/main/DataBase.csv")
