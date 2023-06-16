@@ -3,6 +3,8 @@ import streamlit as st
 import pandas as pd
 import tensorflow as tf
 import pickle
+from tensorflow.keras.models import Sequential, model_from_yaml
+from tensorflow.keras.layers import Dense
 
 # -- Data
 df_coment=pd.read_csv("https://raw.githubusercontent.com/EstebanPerez25/ACD-Modelo_predictivo_de_satisfacion/main/DataBase.csv")
@@ -10,6 +12,11 @@ osf_valores = df_coment['osf'].unique().tolist()
 
 # -- Leer modelo
 #lin_model = pd.read_pickle(r'm_dnn.pkl')
+model = Sequential()
+model.add(Dense(12, input_dim=8, activation='relu'))
+model.add(Dense(8, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
 layer = tf.keras.layers.Dense(2, name="dense")
 model = tf.keras.Sequential([layer], name="model")
 print(model.built)
