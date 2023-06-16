@@ -11,7 +11,13 @@ osf_valores = df_coment['osf'].unique().tolist()
 
 # -- Leer modelo
 #lin_model = pd.read_pickle(r'm_dnn.pkl')
-layer1 = tf.keras.layers.Dense(3, name="dense_1")   
+layer = tf.keras.layers.Dense(2, name="dense")
+model = tf.keras.Sequential([layer], name="model")
+print(model.built)
+with tf.name_scope("parent"):
+    with tf.name_scope(model.name):
+        model.build((None, 3))
+print([v.name for v in model.variables])
 lin_model = pickle.load(open('m_dnn.pkl', 'rb'), encoding='latin1')
 
 # -- Función modelo
