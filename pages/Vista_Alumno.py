@@ -69,6 +69,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    nombre_archivo = "m_dnn.pkl"
-    archivo_entrada = open(nombre_archivo, 'rb')
-    lin_model = pickle.load(archivo_entrada)
+    lin_model = pd.read_pickle(r'm_dnn.pkl')
